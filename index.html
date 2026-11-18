@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ff6c9d">
+<meta name="theme-color" content="#B9E36A">
 <title>18TRIP ペア名クイズ</title>
 <style>
 :root{--pink:#ff6c9d;--purple:#7968dc;--yellow:#ffd96a;--ink:#28243b;--muted:#77738b;--paper:#fffdfb;--line:#eee8f2;--green:#26a879;--red:#e45c70}
@@ -21,6 +21,83 @@ select,button{font:inherit}select{width:100%;border:1.5px solid var(--line);bord
 .study-pair{font-size:22px;font-weight:900;text-align:center;padding:18px 8px}.study-name{font-size:20px;text-align:center;color:var(--purple);font-weight:900}
 footer{text-align:center;color:#918ba1;font-size:11px;padding:10px}
 @media(max-width:520px){body{padding:12px}.row{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.choice{min-height:60px}.stats{gap:6px}.stat{padding:11px 5px}}
+:root {
+  --pink: #A8D957;
+  --purple: #729C43;
+  --yellow: #E8F3B8;
+  --ink: #344A32;
+  --muted: #78856F;
+  --paper: #F7FAF1;
+  --line: #E2EBD6;
+  --green: #26A879;
+  --red: #E45C70;
+}
+
+body {
+  background: linear-gradient(135deg, #F7FAF1, #EAF4D9 55%, #F8F8E9);
+  color: var(--ink);
+}
+
+.eyebrow {
+  color: #729C43;
+}
+
+.brand h1 {
+  color: #344A32;
+}
+
+.card {
+  box-shadow: 0 14px 40px #729C4318;
+}
+
+.field label {
+  color: #526A48;
+}
+
+select {
+  border-color: #DCE8CE;
+}
+
+.primary {
+  background: linear-gradient(100deg, #A8D957, #C5E982);
+  color: #344A32;
+  box-shadow: 0 7px 15px #A8D95738;
+}
+
+.secondary {
+  background: #EEF5E5;
+  color: #648B3F;
+}
+
+.progress {
+  background: #EAF0E2;
+}
+
+.bar {
+  background: linear-gradient(90deg, #A8D957, #729C43);
+}
+
+.tag {
+  background: #EFF7E5;
+  color: #648B3F;
+}
+
+.choice {
+  background: #F6F9F1;
+  border-color: #E5ECD9;
+}
+
+.study-name {
+  color: #729C43;
+}
+
+.stat {
+  background: #F4F8ED;
+}
+
+.stat strong {
+  color: #729C43;
+}
 </style>
 </head>
 <body>
@@ -176,8 +253,8 @@ function renderStudy(){
 }
 $('studyPrev').addEventListener('click',()=>{if(studyIndex>0){studyIndex--;renderStudy()}});
 $('studyNext').addEventListener('click',()=>{studyIndex=studyIndex===DATA.pairs.length-1?0:studyIndex+1;renderStudy()});
-$('quitQuizBtn').addEventListener('click',()=>{if(confirm('ここまでの結果を表示して終了する？'))finish()});
-$('quitStudyBtn').addEventListener('click',()=>{if(confirm('暗記モードを終了して設定画面に戻る？'))show('setup')});
+$('quitQuizBtn').addEventListener('click',()=>finish());
+$('quitStudyBtn').addEventListener('click',()=>show('setup'));
 $('startBtn').addEventListener('click',start);
 $('againBtn').addEventListener('click',start);
 $('homeBtn').addEventListener('click',()=>show('setup'));
